@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier= Modifier.fillMaxSize()) {
     var result by rememberSaveable {
-        mutableStateOf(2)
+        mutableStateOf(3)
     }
     val imageResource=when(result) {
         1->R.drawable.dice_1
