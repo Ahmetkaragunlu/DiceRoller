@@ -48,26 +48,18 @@ class MainActivity : ComponentActivity() {
 
 
 @Composable
-fun DiceWithButtonAndImage(modifier: Modifier= Modifier
-    .fillMaxSize()
-)
-{
+fun DiceWithButtonAndImage(modifier: Modifier= Modifier.fillMaxSize()) {
     var result by rememberSaveable {
-        mutableStateOf(1)
+        mutableStateOf(2)
     }
-
-    val imageResource=when(result)
-    {
+    val imageResource=when(result) {
         1->R.drawable.dice_1
         2->R.drawable.dice_2
         3->R.drawable.dice_3
         4->R.drawable.dice_4
         5->R.drawable.dice_5
-        else ->R.drawable.dice_6
-
-    }
-
-
+        else ->R.drawable.dice_6 }
+    
     Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally){
         Image(painter = painterResource(id = imageResource),
             contentDescription = null)
@@ -77,7 +69,6 @@ fun DiceWithButtonAndImage(modifier: Modifier= Modifier
                 Text(text = stringResource(id = R.string.roll))
             }
     }
-
 }
 
 @Preview
